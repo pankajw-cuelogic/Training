@@ -2,6 +2,10 @@ angular.module('user.controller', ['services', 'provider'])
       .controller('userCtrl', ['$rootScope', '$scope', 'loginService', 'empProvider', UserController])
 
 function UserController($rootScope, $scope , loginService, empProvider) {
+    if (getLocalStorage() == undefined) {
+        window.location = '#/login';
+    }
+
     $scope.users = empProvider.getEmployee();
     $scope.userEmail = "";
     $scope.password = "";
