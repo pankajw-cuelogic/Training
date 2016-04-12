@@ -9,10 +9,9 @@
   <link rel="stylesheet" href="app/app.css">
 </head>
 <body>
-  <ul class="menu">
+  <ul class="menu" ng-app="myApp">
       <li><a href="#/login">Login</a>
     </li>
-      <li>{{loginMessage}}</li>
   </ul>
   <div ng-view></div>
   
@@ -20,7 +19,8 @@
     <script src="../bower_components/angular-route.min.js"></script>
     <script src="../bower_components/angular-ui-router.js"></script>
     <script src="app/common/services/login.js"></script>
-    <script src="app/common//provider/provider.js"></script>
+    <script src="app/common//provider/empoyeeProvider.js"></script>
+    <script src="app/common/provider/credentialProvider.js"></script>
   <!-- Common files to be loaded first -->
   <script src="app/common/directives/index.js"></script>
   <script src="app/common/services/user.js"></script>

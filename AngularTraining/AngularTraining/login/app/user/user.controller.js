@@ -1,7 +1,7 @@
 angular.module('user.controller', ['services', 'provider'])
       .controller('userCtrl', ['$rootScope', '$scope', 'loginService', 'empProvider', UserController])
 
-function UserController($rootScope, $scope, loginService, empProvider) {
+function UserController($rootScope, $scope , loginService, empProvider) {
     $scope.users = empProvider.getEmployee();
     $scope.userEmail = "";
     $scope.password = "";
@@ -13,11 +13,19 @@ function UserController($rootScope, $scope, loginService, empProvider) {
     };
     
     $scope.loginMessage = "";
+    $scope.user = getLocalStorage();
     $scope.login = function () {
         $scope.loginMessage = loginService.login($scope.userEmail, $scope.password);
         if ($scope.loginMessage !== 'Login Fail') {
-            $rootScope.loginMessage = 'Welcome ' + $scope.loginMessage;
+            localStorage.user = 'Welcome ' + $scope.loginMessage;
+            $rootScope.user = 'Welcome ' + $scope.loginMessage;
+            $rootScope.loginMessage = getLocalStorage();
             window.location = '#/home';
         } else { $scope.isValid = true; }
     }
 };
+
+function getLocalStorage()
+{
+    return localStorage.user;
+}

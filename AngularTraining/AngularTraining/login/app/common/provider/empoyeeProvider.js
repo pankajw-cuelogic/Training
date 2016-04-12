@@ -2,21 +2,22 @@
 
 myApp.provider('empProvider', function () {
     this.EmployeeList = '';
-
+    //To get employee list
     this.$get = function () {
         return {
             getEmployee: function () {
-                return getEmployee();
+                return getEmployeeList();
             }
         }
     };
-
+    //To set employee list 
     this.setName = function () {
-        this.EmployeeList = getEmployee1();
+        this.EmployeeList = getEmployeeList();
     };
 });
 
-function getEmployee() {
+
+function getEmployeeList() {
     return [{
         "fullname": "Nilesh",
         "address": "pune",
@@ -51,5 +52,4 @@ function getEmployee() {
         "education": "MSC",
         "pw": "12345"
     }];
-
 }

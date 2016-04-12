@@ -66,8 +66,10 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="login\app\common\provider\provider.js" />
+    <Content Include="login\app\common\provider\credentialProvider.js" />
+    <Content Include="login\app\common\provider\empoyeeProvider.js" />
     <Content Include="login\app\common\services\login.js" />
+    <Content Include="login\app\common\services\user.js" />
     <Content Include="packages.config" />
     <Content Include="login\bower.json" />
     <Content Include="login\npm-debug.log" />
