@@ -1,8 +1,8 @@
-angular.module('user.controller',['services'])
-      .controller('userCtrl',['$rootScope','$scope','userService',UserController])
+angular.module('user.controller', ['services', 'provider'])
+      .controller('userCtrl', ['$rootScope', '$scope', 'loginService', 'empProvider', UserController])
 
-function UserController($rootScope, $scope, userService) {
-    $scope.users = userService.getEmployee();
+function UserController($rootScope, $scope, loginService, empProvider) {
+    $scope.users = empProvider.getEmployee();
     $scope.userEmail = "";
     $scope.password = "";
     $scope.fullName = function () {
@@ -11,10 +11,10 @@ function UserController($rootScope, $scope, userService) {
             return "User name or password is Empty";
         }
     };
-
+    
     $scope.loginMessage = "";
     $scope.login = function () {
-        $scope.loginMessage = userService.login($scope.userEmail, $scope.password);
+        $scope.loginMessage = loginService.login($scope.userEmail, $scope.password);
         if ($scope.loginMessage !== 'Login Fail') {
             $rootScope.loginMessage = 'Welcome ' + $scope.loginMessage;
             window.location = '#/home';

@@ -3,16 +3,15 @@ angular.module('user.service',[])
 
 function userService() {
     var service = {};
-    service.getEmployee = getEmployee;
-    service.login = login;
+    service.get = get;
     return service;
 
-    function getEmployee() {
+    function get() {
         return [{
             "fullname": "Nilesh",
             "address": "pune",
             "email": "nilesh@gmail.com",
-            "age": "23",
+            "age": "23",    
             "gender": "male",
             "education": "BE",
             "pw": "12345"
@@ -42,17 +41,6 @@ function userService() {
             "education": "MSC",
             "pw": "12345"
         }];
-
-    }
-
-    function login(userEmail, password) {
-        var loginMessage = "Login Fail";
-        angular.forEach(getEmployee(), function (value, key) {
-            if (value.email === userEmail && (value.pw === password)) {
-                return loginMessage = value.fullname;
-            }
-        });
-        return loginMessage;
-    }
+    }    
 };
 

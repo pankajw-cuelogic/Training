@@ -66,6 +66,8 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="login\app\common\provider\provider.js" />
+    <Content Include="login\app\common\services\login.js" />
     <Content Include="packages.config" />
     <Content Include="login\bower.json" />
     <Content Include="login\npm-debug.log" />
@@ -83,7 +85,6 @@
     <Content Include="login\app\app.js" />
     <Content Include="login\app\common\directives\index.js" />
     <Content Include="login\app\common\services\index.js" />
-    <Content Include="login\app\common\services\user.js" />
     <Content Include="login\app\user\index.js" />
     <Content Include="login\app\user\user.controller.js" />
     <Content Include="login\app\user\user.route.js" />
