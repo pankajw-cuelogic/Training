@@ -8,13 +8,17 @@ angular.module('tandem', [
 config(['$routeProvider', function($routeProvider) {
     $routeProvider.
            when('/login', {
-               templateUrl: 'app/user/views/login.html',
+               templateUrl: 'app/modules/login/views/login.html',
                controller: 'userCtrl'
            }).
            when('/home', {
-               templateUrl: 'app/user/views/home.html',
-               controller: 'userCtrl'
+               templateUrl: 'app/modules/user/views/home.html',
+               controller: 'homeCtrl'
            }).
+         when('/add', {
+             templateUrl: 'app/modules/user/views/add.html',
+             controller: 'homeCtrl'
+         }).
            otherwise({
                redirectTo: '/'
            });
