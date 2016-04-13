@@ -1,5 +1,6 @@
 <div ng-app="myApp">   
-    <div class="container" >       
+    <div class="container" >
+        <button type="button" ng-click="AddEmployee()">Add New Employee</button>
         <table class="table table-condensed">
             <thead>
                 <tr>
@@ -21,8 +22,8 @@
                     <td > {{user.age}}</td>
                     <td> {{user.gender}}</td>
                     <td > {{user.education}}</td>
-                    <td><button type="button" ng-click="EditEmployee(user.id)">Edit</button></td>
-                    <td><button type="button" ng-click="DeleteEmployee(user.id)">Delete</button></td>
+                    <td><button type="button" ng-click="EditEmployee($index)">Edit</button></td>
+                    <td><button type="button" ng-click="DeleteEmployee($index)">Delete</button></td>
                 </tr>
 
             </tbody>

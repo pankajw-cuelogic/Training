@@ -15,6 +15,10 @@ config(['$routeProvider', function($routeProvider) {
                templateUrl: 'app/user/views/home.html',
                controller: 'homeCtrl'
            }).
+         when('/add', {
+             templateUrl: 'app/user/views/add.html',
+             controller: 'homeCtrl'
+         }).
            otherwise({
                redirectTo: '/'
            });
