@@ -22,12 +22,10 @@
                     <td > {{user.age}}</td>
                     <td> {{user.gender}}</td>
                     <td > {{user.education}}</td>
-                    <td><button type="button" ng-click="EditEmployee($index)">Edit</button></td>
-                    <td><button type="button" ng-click="DeleteEmployee($index)">Delete</button></td>
+                    <td><button type="button" ng-click="EditEmployee(user.id,user.fullname,user.address,user.email,user.age,user.education)">Edit</button></td>
+                    <td><button type="button" ng-click="DeleteEmployee(user.id)">Delete</button></td>
                 </tr>
-
             </tbody>
         </table>
-    </div>
-     
+    </div>     
 </div>

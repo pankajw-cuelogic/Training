@@ -5,7 +5,7 @@ angular.module('tandem', [
   'ngRoute',
   'user'
 ]).
-config(['$routeProvider', function($routeProvider) {
+config(['$routeProvider', function ($routeProvider) {
     $routeProvider.
            when('/login', {
                templateUrl: 'app/modules/login/views/login.html',
@@ -19,7 +19,18 @@ config(['$routeProvider', function($routeProvider) {
              templateUrl: 'app/modules/user/views/add.html',
              controller: 'homeCtrl'
          }).
+         when('/edit', {
+             templateUrl: 'app/modules/user/views/edit.html',
+             controller: 'homeCtrl'
+         }).
            otherwise({
                redirectTo: '/'
            });
-}]);
+}])
+.run(function ($rootScope) {
+    $rootScope.user = localStorage.getItem('user');
+})
+;
+
+
+

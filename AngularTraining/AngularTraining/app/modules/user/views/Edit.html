@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html ng-controller="homeCtrl">
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+</head>
+<body>
+    <h1>Work in progress</h1>
+    <div class="panel-body">
+        <form class="margin-bottom-40" role="form" name="myform">
+            <div class="form-group">
+                <label for="nameEdit" class="margin-left">Name :</label>
+                <input  type="hidden" id="idEdit" value="{{idEdit}}"/>
+                <input type="text" ng-model="nameEdit" class="form-control margin-left width90" id="nameEdit" value="{{nameEdit}}" placeholder="Enter name">
+            </div>
+            <div class="form-group">
+                <label for="addressEdit" class="margin-left">Password</label>
+                <input type="text" ng-model="addressEdit" class="form-control margin-left width90" id="addressEdit" value="{{addressEdit}}" placeholder="Address">
+            </div>
+            <div class="form-group">
+                <label for="emailEdit" class="margin-left">Email</label>
+                <input type="email" ng-model="emailEdit" class="form-control margin-left width90" id="emailEdit" value="{{emailEdit}}" placeholder="Enter Email" required>
+                <p><span ng-show="myform.emailEdit.$error.required">Please enter email</span></p>
+            </div>
+            <div class="form-group">
+                <label for="ageEdit" class="margin-left">Age</label>
+                <input type="number" ng-model="ageEdit" class="form-control margin-left width90" id="ageEdit" value="{{ageEdit}}" placeholder="Enter age">
+            </div>
+
+            <div class="form-group">
+                <label for="educationEdit" class="margin-left">Education</label>
+                <input type="text" ng-model="educationEdit" class="form-control margin-left width90" id="educationEdit" value="{{educationEdit}}" placeholder="Enter Education">
+            </div>
+            <button type="submit" id="submitEdit" ng-click="submitEdit()" class="btn-u btn-u-blue margin-left">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
