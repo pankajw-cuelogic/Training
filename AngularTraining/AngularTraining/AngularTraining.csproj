@@ -66,15 +66,26 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
     <Content Include="login\app\common\provider\credentialProvider.js" />
     <Content Include="login\app\common\provider\empoyeeProvider.js" />
     <Content Include="login\app\common\services\login.js" />
     <Content Include="login\app\common\services\user.js" />
+    <Content Include="login\app\user\home.controller.js" />
     <Content Include="packages.config" />
     <Content Include="login\bower.json" />
     <Content Include="login\npm-debug.log" />
     <Content Include="login\package.json" />
     <Content Include="login\README.md" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <None Include="scripts\jquery-2.0.0.intellisense.js" />
+    <Content Include="scripts\bootstrap.js" />
+    <Content Include="scripts\bootstrap.min.js" />
+    <Content Include="scripts\jquery-2.0.0.js" />
+    <Content Include="scripts\jquery-2.0.0.min.js" />
+    <Content Include="scripts\jquery-2.0.0.min.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -88,9 +99,9 @@
     <Content Include="login\app\common\directives\index.js" />
     <Content Include="login\app\common\services\index.js" />
     <Content Include="login\app\user\index.js" />
-    <Content Include="login\app\user\user.controller.js" />
+    <Content Include="login\app\login\login.controller.js" />
     <Content Include="login\app\user\user.route.js" />
-    <Content Include="login\app\user\views\login.html" />
+    <Content Include="login\app\login\views\login.html" />
     <Content Include="login\app\user\views\home.html" />
     <Content Include="login\index.html" />
     <Content Include="bower_components\angular-route.min.js" />
@@ -99,11 +110,13 @@
     <Content Include="scripts\angular-route.min.js" />
     <Content Include="scripts\angular-ui-router.js" />
     <Content Include="scripts\angular.min.js" />
+    <Content Include="scripts\ui-bootstrap-1.3.0.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

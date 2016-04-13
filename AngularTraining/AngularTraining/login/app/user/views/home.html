@@ -1,28 +1,32 @@
-<div >
-   
-    <ul class="menu">
-        <li>{{user}}</li>
-    </ul>
-    <table style="border:1px">
-        <tr>
-            <td style="width:150px; font-weight:bold"> Full Name </td>
-            <td style="width:200px; font-weight:bold"> Address </td>
-            <td style="width:200px; font-weight:bold"> Email </td>
-            <td style="width:50px; font-weight:bold"> Age </td>
-            <td style="width:80px; font-weight:bold"> Gender </td>
-            <td style="width:200px; font-weight:bold"> Education </td>
-        </tr>
-    </table>
-    <div ng-repeat="user in users">
-        <table style="border:1px">
-            <tr>
-                <td style="width:150px"> {{user.fullname}}</td>
-                <td style="width:200px"> {{user.address}}</td>
-                <td style="width:200px"> {{user.email}}</td>
-                <td style="width:50px"> {{user.age}}</td>
-                <td style="width:80px"> {{user.gender}}</td>
-                <td style="width:200px"> {{user.education}}</td>
-            </tr>
+<div ng-app="myApp">   
+    <div class="container" >       
+        <table class="table table-condensed">
+            <thead>
+                <tr>
+                    <th> Full Name </th>
+                    <th> Address </th>
+                    <th> Email </th>
+                    <th> Age </th>
+                    <th> Gender </th>
+                    <th> Education </th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody ng-repeat="user in users">
+                <tr>
+                    <td > {{user.fullname}}</td>
+                    <td > {{user.address}}</td>
+                    <td> {{user.email}}</td>
+                    <td > {{user.age}}</td>
+                    <td> {{user.gender}}</td>
+                    <td > {{user.education}}</td>
+                    <td><button type="button" ng-click="EditEmployee(user.id)">Edit</button></td>
+                    <td><button type="button" ng-click="DeleteEmployee(user.id)">Delete</button></td>
+                </tr>
+
+            </tbody>
         </table>
     </div>
+     
 </div>

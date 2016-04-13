@@ -19,6 +19,7 @@ myApp.provider('empProvider', function () {
 
 function getEmployeeList() {
     return [{
+        "id":"1",
         "fullname": "Nilesh",
         "address": "pune",
         "email": "nilesh@gmail.com",
@@ -27,6 +28,7 @@ function getEmployeeList() {
         "education": "BE",
         "pw": "12345"
     }, {
+        "id": "2",
         "fullname": "Rishikesh",
         "address": "nashik",
         "email": "rishikesh@gmail.com",
@@ -35,6 +37,7 @@ function getEmployeeList() {
         "education": "ME",
         "pw": "12345"
     }, {
+        "id": "3",
         "fullname": "Amey",
         "address": "pune",
         "email": "amey@gmail.com",
@@ -44,6 +47,7 @@ function getEmployeeList() {
         "pw": "12345"
     }
     , {
+        "id": "4",
         "fullname": "John",
         "address": "nagpur",
         "email": "john@gmail.com",

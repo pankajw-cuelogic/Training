@@ -6,7 +6,7 @@ function UserController($rootScope, $scope , loginService, empProvider) {
         window.location = '#/login';
     }
 
-    $scope.users = empProvider.getEmployee();
+    //$scope.users = empProvider.getEmployee();
     $scope.userEmail = "";
     $scope.password = "";
     $scope.fullName = function () {
