@@ -1,46 +1,84 @@
-angular.module('user.service',[])
-       .service('userService',[userService]);
+angular.module('user.service', ['services', 'provider'])
+      .service('userService', ['empProvider', userService])
 
-function userService() {
+function userService(empProvider) {
+    var users = empProvider.getEmployee();
     var service = {};
     service.get = get;
+    service.deleteEmployee = deleteEmployee;
+    service.getIndexById = getIndexById;
+    service.addEmployee = addEmployee;
+    service.editEmployee = editEmployee;
+    service.authenticateEmail = authenticateEmail;
     return service;
-
+    
     function get() {
-        return [{
-            "fullname": "Nilesh",
-            "address": "pune",
-            "email": "nilesh@gmail.com",
-            "age": "23",    
-            "gender": "male",
-            "education": "BE",
-            "pw": "12345"
-        }, {
-            "fullname": "Rishikesh",
-            "address": "nashik",
-            "email": "rishikesh@gmail.com",
-            "age": "21",
-            "gender": "male",
-            "education": "ME",
-            "pw": "12345"
-        }, {
-            "fullname": "Amey",
-            "address": "pune",
-            "email": "amey@gmail.com",
-            "age": "25",
-            "gender": "male",
-            "education": "MBA",
-            "pw": "12345"
+        return users;
+    }
+
+    function getIndexById(id)
+    {
+        var users = get();
+        for (var i = 0; i < users.length; i++) {
+            if (id == users[i].id)
+                return i;
         }
-        , {
-            "fullname": "John",
-            "address": "nagpur",
-            "email": "john@gmail.com",
-            "age": "22",
-            "gender": "male",
-            "education": "MSC",
-            "pw": "12345"
-        }];
-    }    
+    }
+
+    function getMaxId() {
+        var users = get();
+        var id = 0;
+        for (var i = 0; i < users.length; i++) {
+            if (id <= users[i].id)
+                id = users[i].id;
+        }
+        return parseInt(id, 10) + 1;
+    }
+
+    function deleteEmployee(value)
+    {
+        var index = getIndexById(value);
+        var users = get();
+        users.splice(index, 1);
+        return users;
+    }
+
+    function addEmployee(fullname, address, email, age, gender, education)
+    { 
+        var users = get();
+        users.push({ id: getMaxId(), fullname: fullname, address: address, email: email, age: age, gender: gender, education: education });
+        console.log(users);
+        return users;
+    }
+    function editEmployee(id, fullname, address, email, age, gender, education)
+    {
+        var index = getIndexById(id);
+        users[index].fullname = fullname;
+        users[index].address = address;
+        users[index].email = email;
+        users[index].age = age;
+        users[index].education = education;
+        return users;
+    }
+
+    function authenticateEmail(email, id)
+    {
+        var EMAIL_REGEXP = /^[_a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$/;
+        if( EMAIL_REGEXP.test(email))
+        {
+            var user = get();
+            var isExists = false;
+            for (var i = 0; i < user.length; i++) {
+                if (email == user[i].email && id != parseInt(user[i].id, 10)) {
+                    return 'Email already exists!!!';
+                }
+                return true;
+            }
+        }
+        else {
+            return 'Please enter valid email!!';
+        }
+    }
+
 };
 

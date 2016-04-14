@@ -4,7 +4,7 @@
     this.$get = function () {
         return {
             getCredential: function () {
-                return getEmployeeList();
+                return getCredentialList();
             }
         }
     };
@@ -15,18 +15,22 @@
 });
 
 function getCredentialList() {
-    return [{        
+    return [{
+        "fullname": "nilesh",
         "email": "nilesh@gmail.com",
-        "pw": "12345"
+        "pw": "123"
     }, {
+        "fullname": "rishikesh",
         "email": "rishikesh@gmail.com",
-        "pw": "12345"
+        "pw": "123"
     }, {
+        "fullname": "amey",
         "email": "amey@gmail.com",
-        "pw": "12345"
+        "pw": "123"
     }
     , {
+        "fullname": "john",
         "email": "john@gmail.com",
-        "pw": "12345"
+        "pw": "123"
     }];
 }

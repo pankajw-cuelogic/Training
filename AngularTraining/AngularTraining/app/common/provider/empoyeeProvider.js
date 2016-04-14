@@ -25,8 +25,7 @@ function getEmployeeList() {
         "email": "nilesh@gmail.com",
         "age": "23",
         "gender": "male",
-        "education": "BE",
-        "pw": "12345"
+        "education": "BE"
     }, {
         "id": "2",
         "fullname": "Rishikesh",
@@ -34,8 +33,7 @@ function getEmployeeList() {
         "email": "rishikesh@gmail.com",
         "age": "21",
         "gender": "male",
-        "education": "ME",
-        "pw": "12345"
+        "education": "ME"
     }, {
         "id": "3",
         "fullname": "Amey",
@@ -43,8 +41,7 @@ function getEmployeeList() {
         "email": "amey@gmail.com",
         "age": "25",
         "gender": "male",
-        "education": "MBA",
-        "pw": "12345"
+        "education": "MBA"
     }
     , {
         "id": "4",
@@ -53,7 +50,6 @@ function getEmployeeList() {
         "email": "john@gmail.com",
         "age": "22",
         "gender": "male",
-        "education": "MSC",
-        "pw": "12345"
+        "education": "MSC"
     }];
 }

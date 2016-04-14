@@ -1,10 +1,44 @@
 ﻿<!DOCTYPE html>
-<html>
+<html ng-controller="homeCtrl">
 <head>
     <title></title>
 	<meta charset="utf-8" />
 </head>
 <body>
 <h1>Work in progress</h1>
+    <div class="panel-body">
+        <form class="margin-bottom-40" name="myform">
+            <div class="form-group">
+                <label for="name"class="margin-left">Name :</label>
+                <input type="text" ng-model="name" class="form-control margin-left width90" id="name" placeholder="Enter name">
+                 
+              </div>
+            <div class="form-group">
+                <label for="address" class="margin-left">Password</label>
+                <input type="text" ng-model="address" class="form-control margin-left width90" id="address" placeholder="Address">
+            </div>
+            <div class="form-group">
+                <label for="email" class="margin-left">Email</label>
+                <input type="email" ng-model="email" ng-pattern="word" class="form-control margin-left width90" id="email" placeholder="Enter Email" required>
+            </div>
+            <div class="form-group">
+                <label for="age" class="margin-left">Age</label>
+                <input type="number" ng-model="age" class="form-control margin-left width90" id="age" placeholder="Enter age">
+            </div>
+            <div class="form-group">
+                <label for="gender" class="margin-left">Gender</label>
+                <div margin-left">
+                    <input type="radio" ng-model="genderVal" name="gender" value="male"> Male<br>
+                    <input type="radio" ng-model="genderVal" name="gender" value="female"> Female<br> 
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="education" class="margin-left">Education</label>
+                <input type="text" ng-model="education" class="form-control margin-left width90" id="education" placeholder="Enter Education">
+            </div>
+               <button type="submit" id="submit" ng-click="submit()" class="btn-u btn-u-blue margin-left">Submit</button>
+        </form>
+    </div>
 </body>
 </html>
