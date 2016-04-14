@@ -9,6 +9,7 @@ function userService(empProvider) {
     service.getIndexById = getIndexById;
     service.addEmployee = addEmployee;
     service.editEmployee = editEmployee;
+    service.authenticateEmail = authenticateEmail;
     return service;
     
     function get() {
@@ -37,13 +38,13 @@ function userService(empProvider) {
     function deleteEmployee(value)
     {
         var index = getIndexById(value);
-        var users =get();
+        var users = get();
         users.splice(index, 1);
         return users;
     }
 
     function addEmployee(fullname, address, email, age, gender, education)
-    {
+    { 
         var users = get();
         users.push({ id: getMaxId(), fullname: fullname, address: address, email: email, age: age, gender: gender, education: education });
         console.log(users);
@@ -59,5 +60,25 @@ function userService(empProvider) {
         users[index].education = education;
         return users;
     }
+
+    function authenticateEmail(email, id)
+    {
+        var EMAIL_REGEXP = /^[_a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$/;
+        if( EMAIL_REGEXP.test(email))
+        {
+            var user = get();
+            var isExists = false;
+            for (var i = 0; i < user.length; i++) {
+                if (email == user[i].email && id != parseInt(user[i].id, 10)) {
+                    return 'Email already exists!!!';
+                }
+                return true;
+            }
+        }
+        else {
+            return 'Please enter valid email!!';
+        }
+    }
+
 };
 

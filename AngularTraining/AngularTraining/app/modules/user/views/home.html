@@ -1,31 +1,62 @@
-<div ng-app="myApp">   
-    <div class="container" >
-        <button type="button" ng-click="AddEmployee()">Add New Employee</button>
+<div ng-app="myApp">
+    <div class="container">
+        <div class="col-lg-12">
+            <div class="col-lg-3">
+                <button type="button" ng-click="AddEmployee()">Add New Employee</button>
+            </div>
+            <div class="col-lg-9">
+                <div class="col-lg-2">
+                    <label for="singleSelect"> Sort By: </label><br>
+                </div>
+                <div class="col-lg-4">
+                    <select name="singleSelect" id="singleSelect" ng-model="data.singleSelect">
+                        <option value="name">Name</option>
+                        <option value="email">Email</option>
+                        <option value="age">Age</option>
+                    </select><br>
+                </div>
+                <div class="col-lg-3">
+                    <button ng-click="order()">Sort</button><br>
+                </div>
+            </div>
+        </div>
         <table class="table table-condensed">
             <thead>
                 <tr>
-                    <th> Full Name </th>
-                    <th> Address </th>
-                    <th> Email </th>
-                    <th> Age </th>
+                    <th>
+                        Name
+                        <span class="sortorder" ng-show="predicate === 'fullname'" ng-class="{reverse:reverse}"></span>
+                    </th>
+                    <th>
+                        Address
+                        <span class="sortorder" ng-show="predicate === 'address'" ng-class="{reverse:reverse}"></span>
+                    </th>
+                    <th>
+                        Email
+                        <span class="sortorder" ng-show="predicate === 'email'" ng-class="{reverse:reverse}"></span>
+                    </th>
+                    <th>
+                        Age
+                        <span class="sortorder" ng-show="predicate === 'age'" ng-class="{reverse:reverse}"></span>
+                    </th>
                     <th> Gender </th>
                     <th> Education </th>
                     <th>Edit</th>
                     <th>Delete</th>
                 </tr>
             </thead>
-            <tbody ng-repeat="user in users">
+            <tbody ng-repeat="user in users | orderBy:predicate:reverse">
                 <tr>
-                    <td > {{user.fullname}}</td>
-                    <td > {{user.address}}</td>
+                    <td> {{user.fullname}}</td>
+                    <td> {{user.address}}</td>
                     <td> {{user.email}}</td>
-                    <td > {{user.age}}</td>
+                    <td> {{user.age}}</td>
                     <td> {{user.gender}}</td>
-                    <td > {{user.education}}</td>
+                    <td> {{user.education}}</td>
                     <td><button type="button" ng-click="EditEmployee(user.id,user.fullname,user.address,user.email,user.age,user.education)">Edit</button></td>
                     <td><button type="button" ng-click="DeleteEmployee(user.id)">Delete</button></td>
                 </tr>
             </tbody>
         </table>
-    </div>     
+    </div>
 </div>
